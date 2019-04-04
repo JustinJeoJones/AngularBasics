@@ -23,6 +23,8 @@
         <p ng-if="$ctrl.visable">
             I am visable
         </p>
-        
+        <br>
+        <label>Check me to make text readonly: <input type="checkbox" ng-model="checked"></label><br/>
+        <input type="text" ng-readonly="checked" value="I'm AngularJS" aria-label="Readonly field" />
     </body>
 </html>
