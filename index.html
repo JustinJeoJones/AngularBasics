@@ -11,14 +11,18 @@
         <p>
             {{x}} is {{y}} years old.
         </p>
-        <section ng-controller="TestController as $ctrl">
-            <p>{{ $ctrl.message }}</p>
+        <section ng-controller="TestController as $ctrl" >
+            <p ng-repeat="x in $ctrl.count">{{x}}:{{ $ctrl.message }}</p>
         </section>
-        <button ng-click="count = count + 1" ng-init="count=0">
-            Increment
-        </button>
-        <span>
-            count: {{count}}
-        </span>
+        <div ng-mouseenter="count = count + 1" ng-init="count=0">Mouse over me!</div>
+
+<h1>{{count}}</h1>
+<div ng-mouseleave="count = count - 1" ng-init="count=0">Mouse over me! (and mouse away from me...)</div>
+
+        <button ng-click="$ctrl.visable = true">show</button>
+        <p ng-if="$ctrl.visable">
+            I am visable
+        </p>
+        
     </body>
 </html>
